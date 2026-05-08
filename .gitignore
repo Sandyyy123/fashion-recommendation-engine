@@ -1,0 +1,44 @@
+# Data, models, large artefacts (kept local)
+data/
+data/**
+*.csv
+*.parquet
+*.h5
+*.hdf5
+*.pkl
+*.joblib
+*.pt
+*.pth
+*.bin
+*.npy
+*.npz
+*.zip
+*.tar
+*.tar.gz
+*.7z
+models/
+checkpoints/
+*.ckpt
+
+# Notebook checkpoints + Python cache
+.ipynb_checkpoints/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.env
+.env.*
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+
+# Local tmp
+.tmp/
+*.tmp
+*.log
+!data/README.md
