@@ -1,0 +1,6 @@
+faiss-cpu
+implicit
+numpy
+pandas
+scipy
+torch
