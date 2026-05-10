@@ -79,7 +79,7 @@ python src/model_advanced.py
 
 ## Author
 
-**Dr. Sandeep Grover** — PhD Data Science, independent ML researcher, Mössingen, Germany.
+**Dr. Sandeep Grover** — PhD Data Science, independent ML researcher, Germany.
 
 ---
 
