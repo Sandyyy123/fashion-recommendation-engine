@@ -1,7 +1,7 @@
 # Hybrid Implicit-Feedback and Two-Tower Neural Recommenders for Personalised Fashion at Scale: A v1.0 Study on the H&M Kaggle Dataset
 
 **Author:** Sandeep Grover, Independent Research
-**Affiliation:** Independent researcher, Mossingen, Germany
+**Affiliation:** Independent researcher, Germany
 **Dataset:** H&M Personalized Fashion Recommendations (Kaggle, 2022 release)
 
 **Date:** May 2026
