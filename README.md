@@ -1,4 +1,4 @@
-![Python](https://img.shields.io/badge/Python-3.10%2B-blue) ![Recsys](https://img.shields.io/badge/task-recommendation-purple) ![License](https://img.shields.io/badge/license-MIT-lightgrey)
+![Python](https://img.shields.io/badge/Python-3.10%2B-blue) ![Recsys](https://img.shields.io/badge/task-recommendation-purple) ![License](https://img.shields.io/badge/license-CC%20BY--NC%204.0-lightgrey)
 
 # H&M Personalized Fashion Recommendations
 
