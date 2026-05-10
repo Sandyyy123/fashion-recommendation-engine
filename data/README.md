@@ -17,7 +17,7 @@ Released by H&M Group, Stockholm, in February 2022. Open for academic and learni
 #   https://www.kaggle.com/competitions/h-and-m-personalized-fashion-recommendations/rules
 # Prereq once: kaggle CLI installed and ~/.kaggle/kaggle.json populated.
 
-cd /root/AI/project_root/data
+cd data/
 kaggle competitions download -c h-and-m-personalized-fashion-recommendations
 unzip h-and-m-personalized-fashion-recommendations.zip
 # Optional, image-heavy: this unpacks the images/ tree (~26 GB).
