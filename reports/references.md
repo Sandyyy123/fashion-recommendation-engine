@@ -121,7 +121,7 @@ Role: Literature Scout. All entries verified live against `https://api.crossref.
 
 ## State-of-the-art callout: gaps in the current `reports/references.md`
 
-The existing reference list is strong on the canonical 2008-2020 stack (Hu/Koren ALS, DSSM, Yi 2019 two-tower with logQ, Yang 2020 mixed negatives, SASRec, BERT4Rec, VBPR, DeepFashion, Faiss/HNSW, Steck calibration). It under-covers five fronts that are now the live state of the art and that a Phase 2 H&M run should cite:
+The existing reference list is strong on the canonical 2008-2020 stack (Hu/Koren ALS, DSSM, Yi 2019 two-tower with logQ, Yang 2020 mixed negatives, SASRec, BERT4Rec, VBPR, DeepFashion, Faiss/HNSW, Steck calibration). It under-covers five fronts that are now the live state of the art and that a v1.0 H&M run should cite:
 
 1. **LLM-based and generative recommenders** - Inductive Generative Recommendation via Retrieval-based Speculation (Ding et al., AAAI 2026), LARR (Wan et al., RecSys 2024), and Bridging Search and Recommendation in Generative Retrieval (Penha et al., RecSys 2024) define the new "decode item ids as tokens" paradigm that pure two-tower retrieval no longer dominates on. The current list has none of these.
 2. **Vision-language fashion encoders** - UniFashion (Zhao et al., EMNLP 2024) is the modern unified VLM successor to VBPR/DeepFashion and is what an image-tower upgrade should be benchmarked against. Not cited.

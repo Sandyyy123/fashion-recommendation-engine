@@ -9,7 +9,7 @@ Johnson et al. 2019]; per-user retrieval is one user-tower forward plus a top-k
 ANN query, well below a 50 ms latency budget.
 
 Run:
-    cd /root/AI/liora_projects/13_hm_fashion
+    cd /root/AI/project_root
     python src/model_advanced.py
 
 Inputs (../data/):

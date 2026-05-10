@@ -87,13 +87,13 @@
 
 <section id="title" class="hero">
   <h1>H&amp;M Personalized Fashion Recommendations</h1>
-  <div class="subtitle">Hybrid implicit-feedback ALS plus two-tower neural retrieval, indexed with Faiss HNSW for sub-50 ms inference. Phase 1 scaffold.</div>
+  <div class="subtitle">Hybrid implicit-feedback ALS plus two-tower neural retrieval, indexed with Faiss HNSW for sub-50 ms inference. Initial implementation.</div>
   <div class="meta-grid">
     <div class="item"><span class="lbl">Author</span><span class="val">Sandeep Grover</span></div>
-    <div class="item"><span class="lbl">Programme</span><span class="val">Liora MLE, Cohort 6973</span></div>
+    <div class="item"><span class="lbl">Programme</span><span class="val">Portfolio MLE, </span></div>
     <div class="item"><span class="lbl">Project</span><span class="val">#13 - H&amp;M Fashion</span></div>
     <div class="item"><span class="lbl">Track</span><span class="val">ML Engineer / Recommender Systems</span></div>
-    <div class="item"><span class="lbl">Phase</span><span class="val">1 - scaffold, code-only</span></div>
+    <div class="item"><span class="lbl">Phase</span><span class="val">1 - implementation, code-only</span></div>
     <div class="item"><span class="lbl">Metric</span><span class="val">MAP@12 (Kaggle)</span></div>
   </div>
 </section>
@@ -114,7 +114,7 @@
 
 <section id="data">
   <h2>2. Data</h2>
-  <p>Three tabular files plus one image directory, roughly 30 GB once extracted. Phase 1 documents the dataset and does not download it. See <code>data/README.md</code> for the exact <code>kaggle</code> CLI command.</p>
+  <p>Three tabular files plus one image directory, roughly 30 GB once extracted. v1.0 documents the dataset and does not download it. See <code>data/README.md</code> for the exact <code>kaggle</code> CLI command.</p>
 
   <table>
     <thead>
@@ -207,13 +207,13 @@
   <p>Item embeddings precomputed once, indexed in <code>twotower_faiss.index</code> (HNSW M=32, efSearch=64). Per-customer top-12 in single-digit milliseconds on CPU.</p>
 
   <div class="box box-green">
-    <strong>Optional reranker (Phase 3):</strong> SASRec [Kang &amp; McAuley 2018] or BERT4Rec [Sun 2019] reorders the top-100 candidates with the customer's recent session. Out of scope in Phase 1.
+    <strong>Optional reranker (v1.0):</strong> SASRec [Kang &amp; McAuley 2018] or BERT4Rec [Sun 2019] reorders the top-100 candidates with the customer's recent session. Out of scope in v1.0.
   </div>
 </section>
 
 <section id="evaluation">
   <h2>6. Evaluation</h2>
-  <p>Phase 1 reports placeholders. Headline numbers are deferred to Phase 2 once the full dataset is downloaded and the two scripts are run.</p>
+  <p>v1.0 reports placeholders. Headline numbers are deferred to v1.0 once the full dataset is downloaded and the two scripts are run.</p>
 
   <table>
     <thead>
@@ -236,7 +236,7 @@
   <p>A monolithic deep recommender [He 2017; Cheng 2016] is unusable at retail scale because retrieval needs one forward per (user, item) pair. The two-tower factorisation gives up some interaction-level expressiveness in exchange for the ability to precompute item embeddings once and run an ANN query at inference. This is the architecture that ships in production at Google for YouTube [Covington 2016], at Pinterest for PinSage [Ying 2018], and at Airbnb for search ranking [Grbovic 2018].</p>
 
   <h3>Negative sampling</h3>
-  <p>Pure in-batch negatives are free but biased toward popular items. Pure global uniform negatives are unbiased but information-poor. The Yang 2020 mix - in-batch plus uniform global - is both informative and approximately calibrated when paired with the Yi 2019 logQ correction. The Phase 1 design uses exactly this mix.</p>
+  <p>Pure in-batch negatives are free but biased toward popular items. Pure global uniform negatives are unbiased but information-poor. The Yang 2020 mix - in-batch plus uniform global - is both informative and approximately calibrated when paired with the Yi 2019 logQ correction. The v1.0 design uses exactly this mix.</p>
 
   <h3>Cold-start</h3>
   <p>Cold customers go to a popularity baseline (no signal exists). Cold articles go to content-only retrieval through the item tower (the right move because the item tower can score articles it has never seen in transactions, given metadata) [Schein 2002].</p>
@@ -244,9 +244,9 @@
   <h3>Fairness, calibration, diversity</h3>
   <p>Calibrated recommendations [Steck 2018] and aggregate diversity [Adomavicius &amp; Kwon 2012] are reported alongside accuracy to confirm the system is not collapsing into a narrow popular subset of the catalogue.</p>
 
-  <h3>What is out of scope in Phase 1</h3>
+  <h3>What is out of scope in v1.0</h3>
   <ul>
-    <li>Sequential reranker (SASRec / BERT4Rec) - Phase 3.</li>
+    <li>Sequential reranker (SASRec / BERT4Rec) - v1.0.</li>
     <li>Postcode-to-region embeddings - additional preprocessing required.</li>
     <li>Online bandit on the blend weight, daily incremental retrain, sharded ANN service.</li>
     <li>Multi-task heads (MMoE) [Ma 2018], graph CF (LightGCN, NGCF) [Wang 2019; He 2020].</li>
@@ -255,7 +255,7 @@
 
 <section id="conclusion">
   <h2>8. Conclusion</h2>
-  <p>The Phase 1 deliverable specifies and scaffolds a hybrid recommender for the H&amp;M Kaggle competition that combines an implicit-feedback ALS baseline with a two-tower neural retrieval model trained with sampled-softmax-with-logQ over in-batch and mixed negatives, indexed with Faiss HNSW for sub-50 ms inference. Code is runnable end-to-end, references are CrossRef-verified, the manuscript is in <code>manuscripts/manuscript.md</code>. Phase 2 runs the full pipeline on the Kaggle dataset and reports the headline MAP@12 figures.</p>
+  <p>The v1.0 deliverable specifies and implementations a hybrid recommender for the H&amp;M Kaggle competition that combines an implicit-feedback ALS baseline with a two-tower neural retrieval model trained with sampled-softmax-with-logQ over in-batch and mixed negatives, indexed with Faiss HNSW for sub-50 ms inference. Code is runnable end-to-end, references are CrossRef-verified, the manuscript is in <code>manuscripts/manuscript.md</code>. v1.0 runs the full pipeline on the Kaggle dataset and reports the headline MAP@12 figures.</p>
   <p>The architecture transfers without modification to Zalando, About You, Otto, Bonprix, and Breuninger because the constraints (sparse implicit feedback, large catalogue, tight latency, recency-driven content) are the same across the DACH retail group.</p>
 </section>
 
@@ -272,7 +272,7 @@
 </section>
 
 <footer>
-  Liora MLE Programme, Cohort 6973 - Project 13 - H&amp;M Personalized Fashion Recommendations - Phase 1 scaffold (2026-05-08)
+  Independent Research - Project 13 - H&amp;M Personalized Fashion Recommendations - Initial implementation (2026-05-08)
 </footer>
 </main>
 </body>

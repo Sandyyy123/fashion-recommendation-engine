@@ -5,7 +5,7 @@ H&M customer-by-article interaction matrix. Predictions are evaluated with MAP@1
 on the final-week hold-out per the Kaggle competition metric.
 
 Run:
-    cd /root/AI/liora_projects/13_hm_fashion
+    cd /root/AI/project_root
     python src/model_baseline.py
 
 Inputs (expected under ../data/):

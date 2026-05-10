@@ -6,9 +6,9 @@ Kaggle competition: [`h-and-m-personalized-fashion-recommendations`](https://www
 
 Released by H&M Group, Stockholm, in February 2022. Open for academic and learning use under the competition rules. The dataset accompanies a closed Kaggle competition; you must accept the rules at the competition page once before downloading.
 
-## Phase 1 status
+## v1.0 status
 
-**Not downloaded.** Total payload is roughly 30 GB once extracted (transactions plus customer plus article metadata plus 105k product images). Per the Liora rules, anything above 2 GB or behind a competition acceptance gate is documented only at this stage.
+**Not downloaded.** Total payload is roughly 30 GB once extracted (transactions plus customer plus article metadata plus 105k product images). Per the Portfolio rules, anything above 2 GB or behind a competition acceptance gate is documented only at this stage.
 
 ## Download command
 
@@ -17,7 +17,7 @@ Released by H&M Group, Stockholm, in February 2022. Open for academic and learni
 #   https://www.kaggle.com/competitions/h-and-m-personalized-fashion-recommendations/rules
 # Prereq once: kaggle CLI installed and ~/.kaggle/kaggle.json populated.
 
-cd /root/AI/liora_projects/13_hm_fashion/data
+cd /root/AI/project_root/data
 kaggle competitions download -c h-and-m-personalized-fashion-recommendations
 unzip h-and-m-personalized-fashion-recommendations.zip
 # Optional, image-heavy: this unpacks the images/ tree (~26 GB).
@@ -105,4 +105,4 @@ Images are optional for the baseline but recommended for the two-tower advanced 
 
 ## License and access
 
-The data is released under the Kaggle competition rules. It is free to download for participating users, including post-competition for academic use; redistribution is not permitted. For this Phase 1 scaffold no data is stored in the repository; only the schema and the download command are checked in.
+The data is released under the Kaggle competition rules. It is free to download for participating users, including post-competition for academic use; redistribution is not permitted. For this Initial implementation no data is stored in the repository; only the schema and the download command are checked in.
