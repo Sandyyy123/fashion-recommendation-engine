@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Fashion Recommendation Engine — Sandeep Grover</title>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <style>
@@ -42,71 +41,32 @@ footer{text-align:center;padding:32px;color:var(--muted);font-size:.82rem;border
 </style>
 </head>
 <body>
-
 <nav>
   <a href="https://sandyyy123.github.io" class="nav-back">← Portfolio</a>
   <span class="nav-title">Fashion Recommendation Engine</span>
   <a href="https://github.com/Sandyyy123/fashion-recommendation-engine" target="_blank" class="nav-back" style="margin-left:auto">GitHub ↗</a>
 </nav>
-
 <div class="hero">
   <h1>Fashion Recommendation Engine</h1>
   <p>Hybrid collaborative filtering + content-based recommendations for 1.37M H&amp;M customers across 31M purchase transactions using ALS, LightFM, and Annoy for fast retrieval.</p>
   <div class="badges"><span class="badge">LightFM</span> <span class="badge">implicit ALS</span> <span class="badge">Annoy</span></div>
   <div class="metric-bar">✦ MAP@12 · 1.37M customers · 31M transactions</div>
 </div>
-
 <div class="card">
   <div class="section-title">Interactive Demo</div>
   <div class="highlight">1.37M customers | 31M transactions | H&M dataset</div>
   <p style="font-size:.82rem;color:#94a3b8;margin-bottom:16px">MAP@12 by Recommendation Method</p>
-  <div class="demo-container">
-<canvas id="myChart"></canvas>
-<script>
-new Chart(document.getElementById('myChart'), {
-  type: 'bar',
-  data: {
-    labels: ["ALS (baseline)", "LightFM CF", "LightFM Hybrid", "Annoy NN", "Final Ensemble"],
-    datasets: [{
-      label: 'MAP@12',
-      data: [0.021, 0.034, 0.048, 0.039, 0.053],
-      backgroundColor: ["rgba(99,102,241,0.7)", "rgba(99,102,241,0.7)", "rgba(99,102,241,0.7)", "rgba(99,102,241,0.7)", "rgba(139,92,246,0.85)"],
-      borderColor: 'rgba(99,102,241,0.3)',
-      borderWidth: 1,
-      borderRadius: 6
-    }]
-  },
-  options: {
-    responsive: true,
-    plugins: {
-      legend: { display: false },
-      tooltip: { callbacks: { label: ctx => ' ' + ctx.parsed.y.toLocaleString() } }
-    },
-    scales: {
-      y: {
-        beginAtZero: true,
-        grid: { color: 'rgba(255,255,255,0.05)' },
-        ticks: { color: '#94a3b8', font: { size: 11 } },
-        title: { display: true, text: 'MAP@12', color: '#818cf8', font: { size: 12 } }
-      },
-      x: { grid: { display: false }, ticks: { color: '#94a3b8', font: { size: 11 } } }
-    }
-  }
-});
-</script></div>
+  <div class="demo-container"><canvas id="myChart"></canvas><script>
+new Chart(document.getElementById('myChart'),{type:'bar',data:{labels:["ALS (baseline)", "LightFM CF", "LightFM Hybrid", "Annoy NN", "Final Ensemble"],datasets:[{label:'MAP@12',data:[0.021, 0.034, 0.048, 0.039, 0.053],backgroundColor:["rgba(99,102,241,0.7)", "rgba(99,102,241,0.7)", "rgba(99,102,241,0.7)", "rgba(99,102,241,0.7)", "rgba(139,92,246,0.9)"],borderRadius:6,borderWidth:0}]},options:{responsive:true,plugins:{legend:{display:false}},scales:{y:{beginAtZero:true,grid:{color:'rgba(255,255,255,0.05)'},ticks:{color:'#94a3b8'},title:{display:true,text:'MAP@12',color:'#818cf8'}},x:{grid:{display:false},ticks:{color:'#94a3b8',font:{size:10},maxRotation:35}}}}});</script></div>
   <div class="stats-grid"><div class="stat-box"><span class="stat-value">1.37M</span><span class="stat-label">Customers</span></div><div class="stat-box"><span class="stat-value">31M</span><span class="stat-label">Transactions</span></div><div class="stat-box"><span class="stat-value">0.053</span><span class="stat-label">MAP@12</span></div><div class="stat-box"><span class="stat-value"><20ms</span><span class="stat-label">Latency</span></div></div>
 </div>
-
 <div class="card">
   <div class="section-title">Tech Stack</div>
   <div class="badges" style="margin-bottom:0"><span class="badge">LightFM</span> <span class="badge">implicit ALS</span> <span class="badge">Annoy</span></div>
 </div>
-
 <footer>
-  <p>Built by <a href="https://sandyyy123.github.io">Sandeep Grover</a> ·
-     <a href="https://github.com/Sandyyy123/fashion-recommendation-engine" target="_blank">GitHub Repo</a> ·
-     <a href="https://linkedin.com/in/sandeep-grover-b3192a16" target="_blank">LinkedIn</a></p>
+  <p>Built by <a href="https://sandyyy123.github.io">Sandeep Grover</a> &nbsp;·&nbsp;
+     <a href="https://github.com/Sandyyy123/fashion-recommendation-engine" target="_blank">View on GitHub</a></p>
 </footer>
-
 </body>
 </html>
